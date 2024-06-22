@@ -12,11 +12,21 @@
 
 
 ## Script coding rules
-* All scripts should have a comment at the start of them telling about the purpose of the script, if the script has "!# /bin bash" then the comment should be directly below it, otherwise it should be on the first line of the script and should look like this:
+* All scripts should be compatible with all POSIX shells
+	* Always use exclusively ***"!# /bin/sh"*** as the start of sh scripts.
+		* This works on all UNIX systems.
+		* This will make shell check verify that syntax of shell script is POSIX compatible.  
+* Double quotations should be used around ALL uses (not declarations) of variables:
+	* Example: `"${variable}..."`
+	* Declarations should not follow the rule: `variable="content"`
+* All variables inside quotations should be use the `"${}"` syntax
+	* Example: `"${variable}..."`
+	* Never: `"$variable" 
+* All scripts should have a comment directly below "#!" describing purpose of the script:
 	 * ```
-	 	## Bash script which ...
+	 	## Script which ...
 		(Miss 1 line)
-		(Miss 1 more line)
+		(Miss 1 line)
 	 	<The script code itself>........
 	    ```
 
