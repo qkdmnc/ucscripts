@@ -14,7 +14,7 @@
 
 ## Script coding rules
 * All scripts should be compatible with all POSIX shells
-	* Always use exclusively ***"!# /bin/sh"*** as the start of sh scripts.
+	* Always use exclusively ***"#! /bin/sh"*** as the start of sh scripts.
 		* This works on all UNIX systems.
 		* This will make shell check verify that syntax of shell script is POSIX compatible.  
 * Double quotations should be used around ALL uses (not declarations) of variables:
