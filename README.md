@@ -7,8 +7,9 @@
 
 
 ## Repository Layout
-* `main.sh` file - the main shell script of this repo which is able to configures different unix systems(e.g. Linux, MacOS)
-* `configurators` folder - folder containing scripts to configure applications and the system beyond what `main.sh` had configured
+* `scripts` - the directory containing all of the repository's scripts
+	* `main.sh`- the main shell script of this repository which is able to configures different unix systems (e.g. Linux, MacOS)
+	* `configurators`- directory containing scripts to configure applications
 
 
 ## Script coding rules
