@@ -9,10 +9,8 @@
 ## Repository Layout
 * `scripts` - the directory containing all of the repository's scripts
 	* `main.sh` - the main shell script of this repository which is able to configures different unix systems (e.g. Linux, MacOS)
-	* `configurators` - directory containing scripts to configure applications
-		* All scripts inside this folder are included into `main.sh` and are therefore run from the directory where it is located 
-	* `include` - directory containing scripts to configure the system
-		* All scripts inside this folder are included into `main.sh` and are therefore run from the directory where it is located  
+	* `include` - 
+		* All scripts inside this folder are included into `main.sh` and are therefore run from the directory where `main.sh` is located which means that all of the file and directory paths inside them should be relative to `main.sh`.
 
 
 ## Script coding rules
