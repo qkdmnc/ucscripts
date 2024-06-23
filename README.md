@@ -8,21 +8,14 @@
 
 ## Repository Layout
 * `scripts` - the directory containing all of the repository's scripts
-	* `main.sh`- the main shell script of this repository which is able to configures different unix systems (e.g. Linux, MacOS)
-	* `configurators`- directory containing scripts to configure applications
+	* `main.sh` - the main shell script of this repository which is able to configures different unix systems (e.g. Linux, MacOS)
+	* `configurators` - directory containing scripts to configure applications
+		* All scripts inside this folder are included into `main.sh` and are therefore run from the directory where it is located 
+	* `include` - directory containing scripts to configure the system
+		* All scripts inside this folder are included into `main.sh` and are therefore run from the directory where it is located  
 
 
 ## Script coding rules
-* All scripts should be compatible with all POSIX shells
-	* Always use exclusively ***"#! /bin/sh"*** as the start of sh scripts.
-		* This works on all UNIX systems.
-		* This will make shell check verify that syntax of shell script is POSIX compatible.  
-* Double quotations should be used around ALL uses (not declarations) of variables:
-	* Example: `"${variable}..."`
-	* Declarations should not follow the rule: `variable="content"`
-* All variables inside quotations should be use the `"${}"` syntax
-	* Example: `"${variable}..."`
-	* Never: `"$variable" 
 * All scripts should have a comment directly below "#!" describing purpose of the script:
 	 * ```
 	 	## Script which ...
@@ -30,6 +23,20 @@
 		(Miss 1 line)
 	 	<The script code itself>........
 	    ```
+* All scripts should be compatible with all POSIX shells
+	* Always use exclusively ***#! /bin/sh*** as the start of sh scripts.
+		* This works on all UNIX systems.
+		* This will make shell check verify that syntax of shell script is POSIX compatible.  
+* Double quotations should be used around ALL uses (not declarations) of variables:
+	* Example: `"${variable}..."`
+	* Declarations should not follow the rule: `variable="content"`
+* All variables inside quotations should be use the `"${}"` syntax
+	* Example: `"${variable}..."`
+	* Never: `"$variable"
+* All keywords such as `then`, which follow statements such as `if`, should be located on the same line as the statement they come after.
+	* Examples
+		* `if [ -f "${file}" ]; then` 
+		* `for file in directory; do` 
 
 
 ## Shell Script Checking Algorithm
