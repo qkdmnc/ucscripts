@@ -30,17 +30,23 @@
 * Double quotations should be used around ALL uses (not declarations) of variables:
 	* Example: `"${variable}..."`
 	* Declarations should not follow the rule: `variable="content"`
+* Double quotations should be used around ALL plain text:
+	*  Example: `variable="content"`
 * All variables inside quotations should be use the `"${}"` syntax
 	* Example: `"${variable}..."`
 	* Never: `"$variable"
 * All keywords such as `then`, which follow statements such as `if`, should be located on the same line as the statement they come after.
 	* Examples
 		* `if [ -f "${file}" ]; then` 
-		* `for file in directory; do` 
+		* `for file in directory; do`
 
 
 ## Shell Script Checking Algorithm
-1. Check all the changed files .sh with [ShellCheck](https://www.shellcheck.net/) and fix errors that show up
-	* ShellCheck [developer's website](https://github.com/koalaman/shellcheck)
-2. Make sure that all global varibales used by included scripts are present
-3. Run the "scripts/main.sh" and any other script that was changed on a Linux VM and check if it does everything it is supposed to and that it does it correctly
+* [ShellCheck](https://www.shellcheck.net/) - static shell script checker
+	* ShellCheck [repository](https://github.com/koalaman/shellcheck)
+1. Paste `scripts/main.sh` into ShellCheck
+2. In the places where other scripts are being included into the `main.sh`, paste these scripts into the ShellCheck instance from the point above
+	* Do not remove the `main.sh`'s file inclusion command as it may also contain an error and should be checked
+3. Fix ALL errors and suggestions shown by ShellCheck to the furthest possible extent (that does not brake the program).
+	* Make sure that all POSIX non-compliant code suggested by ShellCheck is removed
+4. Clone this repository and then run `scripts/main.sh` on a Linux VM to check if everything that was supposed to be done was done correctly.
