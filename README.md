@@ -43,9 +43,13 @@
 ## Shell Script Checking Algorithm
 * [ShellCheck](https://www.shellcheck.net/) - static shell script checker
 	* ShellCheck [repository](https://github.com/koalaman/shellcheck)
+* In case a ShellCheck suggested fix is CERTAINLY 100% irrelevant, it can be ignored for that one specific instance (not for the entire file with: [ShellCheck Ignoring](https://github.com/koalaman/shellcheck/wiki/Ignore)
+	* Always check if the warning is actually totally irrelevant
+	* ALWAYS REMOVE the ignore statement if the line of code below it was edited or removed
+	* The explanations for all ShellCheck suggestions (e.g. SC...) are in ShellCheck [Wiki](https://github.com/koalaman/shellcheck/wiki)
 1. Paste `scripts/main.sh` into ShellCheck
 2. In the places where other scripts are being included into the `main.sh`, paste these scripts into the ShellCheck instance from the point above
 	* Do not remove the `main.sh`'s file inclusion command as it may also contain an error and should be checked
-3. Fix ALL errors and suggestions shown by ShellCheck to the furthest possible extent (that does not brake the program).
-	* Make sure that all POSIX non-compliant code suggested by ShellCheck is removed
+3. Fix ALL errors and suggestions shown by ShellCheck to the furthest possible extent that does not brake the program in an unfixable way.
+	* Make sure that all POSIX non-compliant code suggested by ShellCheck is removed.
 4. Clone this repository and then run `scripts/main.sh` on a Linux VM to check if everything that was supposed to be done was done correctly.
