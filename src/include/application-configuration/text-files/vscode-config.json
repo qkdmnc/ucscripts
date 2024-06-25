@@ -1,0 +1,29 @@
+{
+	"__FILE_DESCRIPTION__" : "contains visual studio code settings",
+	"__NOTE__" : "to check what any of the below settings do, hover over it with the mouse pointer in VScode",
+
+	"files.trimTrailingWhitespace" : true,
+	"files.trimFinalNewlines" : true,
+
+	"editor.wordWrap": "on",
+	"editor.minimap.enabled": false,
+	"editor.codeLens": false,
+	"editor.emptySelectionClipboard": false,
+	"explorer.openEditors.visible": 0,
+
+	"editor.acceptSuggestionOnEnter": "off",
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+
+	"workbench.startupEditor": "none",
+	"workbench.statusBar.visible": false,
+	"workbench.layoutControl.enabled": false,
+	"window.titleBarStyle" : "custom",
+	"zenMode.fullScreen": false,
+
+	"security.workspace.trust.enabled": false,
+	"files.associations" : {
+		"Makefile.inc" : "makefile",
+	},
+}
