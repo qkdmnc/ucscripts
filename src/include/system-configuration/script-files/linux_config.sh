@@ -2,9 +2,9 @@
 ## The script hides default XDG directories (e.g. Music) by moving them from the root of the HOME directory to a hidden dot (.) directory inside the HOME directry. The Desktop, Downloads and Documents directories are not touched
 
 
-hidden_xdg_user_directories_path="${HOME}/.hidden_xdg_user_directories"
+hidden_xdg_user_directories_path="${HOME}/.hidden_xdg_user_directories" # path to the directory to which the default XDG directories will be moved in order to be hidden from the root of home directory
 
-mkdir -p "${hidden_xdg_user_directories_path}" # create the directory where default xdg directories will be hidden inside
+mkdir -p "${hidden_xdg_user_directories_path}"
 
 mv "${HOME}/Templates/" "${hidden_xdg_user_directories_path}" # move the default XDG user Templates folder from the root of home directory to a hidden directory
 xdg-user-dirs-update --set TEMPLATES "${hidden_xdg_user_directories_path}/Templates/" # change the path for the Templates folder in the ~/.config/user-dirs.dirs configuration file using the xdg-user-dirs-update utility pre-installed on most desktop environments (DO NOT use the xdg-user-dirs-gtk-update)
