@@ -1,14 +1,22 @@
 #! /bin/sh
-## Remove default XDG directories ##
+## The script hides default XDG directories (e.g. Music) by moving them from the root of the HOME directory to a hidden dot (.) directory inside the HOME directry. The Desktop, Downloads and Documents directories are not touched
 
 
-xdg_replacement_directory=".std_xdg_dirs" # when changing the name of the directory in this variable, make sure to also change all of it's occurances in ./textfiles/user-dirs.dirs file in this repository
-mkdir -p "${HOME}/${xdg_replacement_directory}" # create a directory to move the XDG directories to, so that they do not bloat the /home/[user]
+hidden_xdg_user_directories_path="${HOME}/.hidden_xdg_user_directories"
 
-mkdir -p "${HOME}/${xdg_replacement_directory}/Templates" "${HOME}/${xdg_replacement_directory}/Pictures" # for XDG directories that aren't useless in functionality, but still bloat up the home directory, create replacement directories, but put them into a hidden(.) directory instead of the root of home directory(Templates directory is needed so that files could be created from the file manager, Pictures directory is needed so that screenshots aren't thrown into the home directory)
-touch "${HOME}/${xdg_replacement_directory}/Templates/file.txt" # create a text file template in Templates directory so that textfiles could be easily created from the file manager without using the command line
+mkdir -p "${hidden_xdg_user_directories_path}" # create the directory where default xdg directories will be hidden inside
 
-rm -rf "${HOME}/Music" "${HOME}/Pictures" "${HOME}/Public" "${HOME}/Templates" "${HOME}/Videos" # remove bloat directories from the root of home directory as they aren't needed or are moved to be in another directory
+mv "${HOME}/Templates/" "${hidden_xdg_user_directories_path}" # move the default XDG user Templates folder from the root of home directory to a hidden directory
+xdg-user-dirs-update --set TEMPLATES "${hidden_xdg_user_directories_path}/Templates/" # change the path for the Templates folder in the ~/.config/user-dirs.dirs configuration file using the xdg-user-dirs-update utility pre-installed on most desktop environments (DO NOT use the xdg-user-dirs-gtk-update)
 
-rm -rf "${HOME}/.config/user-dirs.dirs" # remove the old XDG directory config file
-cp "${system_configuration_textfiles_directory}/user-dirs.dirs" "${HOME}/.config/" # move our new XDG directory config file onto the place of the old one
+mv "${HOME}/Public/" "${hidden_xdg_user_directories_path}"
+xdg-user-dirs-update --set PUBLICSHARE "${hidden_xdg_user_directories_path}/Public/"
+
+mv "${HOME}/Music/" "${hidden_xdg_user_directories_path}"
+xdg-user-dirs-update --set MUSIC "${hidden_xdg_user_directories_path}/Music/"
+
+mv "${HOME}/Pictures" "${hidden_xdg_user_directories_path}"
+xdg-user-dirs-update --set PICTURES "${hidden_xdg_user_directories_path}/Pictures"
+
+mv "${HOME}/Videos" "${hidden_xdg_user_directories_path}"
+xdg-user-dirs-update --set VIDEOS "${hidden_xdg_user_directories_path}/Videos"
