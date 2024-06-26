@@ -105,13 +105,13 @@ mkdir -p ${directory_creation_list} # Double quotes SHOULD NOT be used around $d
 
 
 
-# End of script messages
-## Information
+# End of script output
+## Information outputted to the terminal for the user
 clear # clear all of the output of the code above, to not clutter the terminal
 echo "
 --- Important Information ---
 1. This script has finished, reboot the computer to make sure everything works fine
-2. After rebooting the computer, open ${script_output_file}(e.g. by typing in the terminal - cat ${script_output_file}) located in this directory and follow instructions in it"
+2. After rebooting the computer, go to this directory (src) and follow the instructions displayed after running: cat ${script_output_file}"
 
 
 ## GUI Configurations
