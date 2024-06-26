@@ -36,7 +36,7 @@ output_info_file="./output_info.txt"
 echo "Should virutalization software be installed (yes/no): " # read -p was not used as it is not compatble with read -r which is required and because -p is not POSIX compliant
 read -r virtualization_install # read -r is used so that inputted backslashes are not interpreted as escape sequences, but as normal characters
 
-if [ "${virtualization_install}" != "yes" ]; then
+if [ "${virtualization_install}" = "yes" ]; then
 	directory_creation_list="${directory_creation_list} ${HOME}/vm/iso_images ${HOME}/vm/virtual_disks"
 fi
 
