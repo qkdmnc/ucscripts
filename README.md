@@ -3,7 +3,7 @@
 1. Clone this repository into any folder(usually the Downloads folder in user's home folder) with `git clone https://github.com/qkdmnc/ucscripts/`
 2. Run `cd src`
 3. Run the `main.sh` script, answer all of it's prompts and the script will configure a UNIX-like system.
-	* On Linux: `bash main.sh`
+	* On Linux run using: `bash main.sh`
 4. Read the output once the script finishes and follow the instructions outlined in it.
 
 
