@@ -128,21 +128,21 @@ echo "
 
 --- Check if all of these points were done by the script ---
 1. All of the following applications were installed by the package manager: ${application_list} vscode
-	- No terminal emulator application was installed by this script, the desktop environment's pre-installed terminal emulator application should be used(GNOME terminal on GNOME and Konsole on KDE(and other QT desktop environments))
-	- Some or all applications from the list above might not be installed if APT package manager is used becuase it fails if any package from the list provided to it is missing in it's repositories(for example due to one package in the list having been written incorrectly)
+	- No terminal emulator application was installed by this script, the desktop environment's pre-installed terminal emulator application should be used(GNOME terminal on GNOME and Konsole on KDE(and other QT desktop environments)).
+	- Some or all applications from the list above might not be installed if APT package manager is used becuase it fails if any package from the list provided to it is missing in it's repositories(for example due to one package in the list having been written incorrectly).
 2. Following directories were created: ${directory_creation_list}
 3. The following applications were configured: ${configured_application_list}" >> "${script_output_file}"
 
 #### Message specific to systems which utilize bash
 if [ "${SHELL}" = "/bin/bash" ]; then
-	echo "4. The default bash prompt was changed to a custom one by editing the default value of PS1 using bashrc" >> "${script_output_file}"
+	echo "4. The default bash prompt was changed to a custom one by editing the default value of PS1 using bashrc." >> "${script_output_file}"
 fi
 
 #### Message specifc to the systems running linux OS
 if [ "${current_os}" = "linux" ]; then
 	echo "
 -- Points to check that are specific to the installed Operating System, ${current_os} --
-1. Default XDG directories (e.g. Music) were moved to a hidden directory inside the user home directory" >> "${script_output_file}"
+1. Default XDG directories (e.g. Music) were moved to a hidden directory inside the user home directory." >> "${script_output_file}"
 
 fi
 
@@ -157,4 +157,4 @@ echo "
 * If the computer contains an NVIDIA GPU, install NVIDIA proprietary drivers for it.
 
 
-Reboot the computer to make sure all of the settings have been applied" >> "${script_output_file}"
+Reboot the computer to make sure all of the settings have been applied." >> "${script_output_file}"
