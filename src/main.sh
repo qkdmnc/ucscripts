@@ -28,7 +28,7 @@ application_configuration_textfiles_directory="${application_configuration_direc
 
 
 ## File which will contain the output of this script after it finishes 
-output_info_file="./output_info.txt"
+script_output_file="./output.txt"
 
 
 
@@ -111,13 +111,13 @@ clear # clear all of the output of the code above, to not clutter the terminal
 echo "
 --- Important Information ---
 1. This script has finished, reboot the computer to make sure everything works fine
-2. After rebooting the computer, open ${output_info_file}(e.g. by typing in the terminal - cat ${output_info_file}) located in this directory and follow instructions in it"
+2. After rebooting the computer, open ${script_output_file}(e.g. by typing in the terminal - cat ${script_output_file}) located in this directory and follow instructions in it"
 
 
 ## GUI Configurations
 if [ "${current_de}" != "none" ]; then
-	echo "--- GUI Configuration ---" >> "${output_info_file}"
-	cat "${system_configuration_textfiles_directory}/${current_de}-config.md" >> "${output_info_file}"
+	echo "--- GUI Configuration ---" >> "${script_output_file}"
+	cat "${system_configuration_textfiles_directory}/${current_de}-config.md" >> "${script_output_file}"
 fi
 
 
@@ -131,18 +131,18 @@ echo "
 	- No terminal emulator application was installed by this script, the desktop environment's pre-installed terminal emulator application should be used(GNOME terminal on GNOME and Konsole on KDE(and other QT desktop environments))
 	- Some or all applications from the list above might not be installed if APT package manager is used becuase it fails if any package from the list provided to it is missing in it's repositories(for example due to one package in the list having been written incorrectly)
 2. Following directories were created: ${directory_creation_list}
-3. The following applications were configured: ${configured_application_list}" >> "${output_info_file}"
+3. The following applications were configured: ${configured_application_list}" >> "${script_output_file}"
 
 #### Message specific to systems which utilize bash
 if [ "${SHELL}" = "/bin/bash" ]; then
-	echo "4. The default bash prompt was changed to a custom one by editing the default value of PS1 using bashrc" >> "${output_info_file}"
+	echo "4. The default bash prompt was changed to a custom one by editing the default value of PS1 using bashrc" >> "${script_output_file}"
 fi
 
 #### Message specifc to the systems running linux OS
 if [ "${current_os}" = "linux" ]; then
 	echo "
 -- Points to check that are specific to the installed Operating System, ${current_os} --
-1. Default XDG directories (e.g. Music) were moved to a hidden directory inside the user home directory" >> "${output_info_file}"
+1. Default XDG directories (e.g. Music) were moved to a hidden directory inside the user home directory" >> "${script_output_file}"
 
 fi
 
@@ -157,4 +157,4 @@ echo "
 * If the computer contains an NVIDIA GPU, install NVIDIA proprietary drivers for it.
 
 
-Reboot the computer to make sure all of the settings have been applied" >> "${output_info_file}"
+Reboot the computer to make sure all of the settings have been applied" >> "${script_output_file}"
