@@ -14,7 +14,7 @@ if git --version ; then # Make sure that the program exists before trying to con
 
 
   ## Add the application's name to the list of configured applications
-  configured_application_list="${configured_application_list}git, "
+  configured_application_list="${configured_application_list}git "
 fi
 
 
@@ -31,7 +31,7 @@ if nano --version ; then
   
   
   ## Add the application's name to the list of configured applications
-  configured_application_list="${configured_application_list}nano, "
+  configured_application_list="${configured_application_list}nano "
 fi
 
 
@@ -66,5 +66,5 @@ if code --version ; then
   
   
   ## Add the application's name to the list of configured applications
-  configured_application_list="${configured_application_list}vscode, "
+  configured_application_list="${configured_application_list}vscode "
 fi
