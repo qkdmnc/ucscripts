@@ -75,9 +75,12 @@
 2. In the "Show Apps" menu sort all of the applications into the following folders: *Applications*, *Office*, *Utilities*, *Miscellaneous*
 3. Gnome Terminal(gnome-terminal) - Burger Menu(3 lines) - Preferences
 	* Profiles - Default Profile - Rename(to "Personal")
-		* Colors
-			* Use colors from system theme(OFF)
-			* Built-in schemes(Green on black)
+		* Text
+			* Custom font (ON)
+			* Font size (SET) 
+   		* Colors
+			* Use colors from system theme (OFF)
+			* Built-in schemes (Green on black)
 4. In GNOME Extensions application disable all individual extensions and then extensions as a whole.
 * On Ubuntu, to use the default GNOME experience: Restart - On login screen - Press gear icon - Select vanilla GNOME instead of UBUNTU in the options
 	* Make sure ***echo $XDG_SESSION_TYPE*** is **wayland** after changing the above and logging in
