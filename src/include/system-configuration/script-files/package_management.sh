@@ -88,7 +88,7 @@ if [ "${current_pm}" = "dnf" ]; then
 
 	## Install QEMU-KVM and GUI Virt-Manager
  	if [ "${virtualization_install}" = "yes" ]; then
- 		sudo dnf install @virtualization
+ 		sudo dnf -y install @virtualization
    	fi
 
 
