@@ -1,9 +1,10 @@
 # Scripts
 ## Using this repository
 1. Clone this repository into any folder(usually the Downloads folder in user's home folder) with `git clone https://github.com/qkdmnc/ucscripts/`
-2. Run the `main.sh` script and answer all of it's prompts, this script will configure a UNIX-like system.
-3. Check if everything `main.sh` prints out in "Done" section of it's output, was done by it.
-4. Read and do other recommendations printed out by the `main.sh` script after it has finished.
+2. Run `cd src`
+3. Run the `main.sh` script, answer all of it's prompts and the script will configure a UNIX-like system.
+	* On Linux: `bash main.sh`
+4. Read the output once the script finishes and follow the instructions outlined in it.
 
 
 ## Repository Layout
