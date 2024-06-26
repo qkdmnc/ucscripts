@@ -124,6 +124,8 @@ fi
 ## Final message
 ### Message telling the user what was supposed to be done by the script so they make sure it was done
 echo "
+
+
 --- Check if all of these points were done by the script ---
 1. All of the following applications were installed by the package manager: ${application_list} vscode
 	- No terminal emulator application was installed by this script, the desktop environment's pre-installed terminal emulator application should be used(GNOME terminal on GNOME and Konsole on KDE(and other QT desktop environments))
