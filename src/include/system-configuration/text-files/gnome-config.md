@@ -71,7 +71,7 @@
 
 
 ## Miscellaneous
-1. Pin/Unpin applications on the Dash so that its layout is: *Files*, *Firefox*, *Visual Studio Code*, *Terminal*
+1. Pin/Unpin applications on the Dash so that its layout is: *Files*, *Terminal*, *Firefox*, *Visual Studio Code*
 2. In the "Show Apps" menu sort all of the applications into the following folders: *Applications*, *Office*, *Utilities*, *Miscellaneous*
 3. Gnome Terminal(gnome-terminal) - Burger Menu(3 lines) - Preferences
 	* Profiles - Default Profile - Rename(to "Personal")
