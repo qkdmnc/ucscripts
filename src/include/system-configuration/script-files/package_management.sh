@@ -35,11 +35,10 @@ if [ "${current_pm}" = "apt" ]; then
 
 	## Install applications with platform specific names
 	sudo apt -y install build-essential # install "make" and other GNU developer utilties
-
-
-	## Install QEMU-KVM and GUI Virt-Manager
- 	if [ "${virtualization_install}" = "yes" ]; then
-		sudo apt -y install qemu-utils qemu-system qemu-system-gui
+	
+	### Install QEMU and Virt manager if GNOME Boxes aren't available (GNOME isn't installed)
+	if [ "${current_de}" != "gnome" ]; then
+		sudo apt -y install qemu-system virt-manager
 	fi
 
 
@@ -85,11 +84,10 @@ if [ "${current_pm}" = "dnf" ]; then
 	## Install applications with platform specific names
 	sudo dnf -y install @development-tools # install "make" and other GNU utilites
 
-
-	## Install QEMU-KVM and GUI Virt-Manager
- 	if [ "${virtualization_install}" = "yes" ]; then
- 		sudo dnf -y install @virtualization
-   	fi
+	### Install QEMU and Virt manager if GNOME Boxes aren't available (GNOME isn't installed)
+	if [ "${current_de}" != "gnome" ]; then
+		sudo dnf -y install @virtualization
+	fi
 
 
 	## Remove the ssh server to disable the ability of remote access to the computer(to prevent malicious unauthorized access)
