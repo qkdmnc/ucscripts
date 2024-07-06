@@ -82,13 +82,12 @@ fi
 . "${system_configuration_scriptfiles_directory}/${current_os}_config.sh" || exit # "ShellCheck can't follow non-constant source" is irrelevant and the comment above stops ShellCheck from showing this warning only for this particular line, all other warnings are shown
 
 
-## Change the bash shell prompt's colors
-### Good PS1 Generator - https://ezprompt.net/
-### PS1 variable holds the configuration of the shell's prompt
+## Change the bash shell prompt
 if [ "${SHELL}" = "/bin/bash" ]; then
-	touch ~/.bashrc
- 	# shellcheck disable=SC2028
-	echo 'PS1="\[\e[36m\][\[\e[m\]\[\e[34m\]\u\[\e[m\] \[\e[33m\]\w\[\e[m\] \[\e[32m\]\\$\[\e[m\]\[\e[36m\]]\[\e[m\] "' >> ~/.bashrc # "Echo does not expand escape sequences" is irrelevant because the text should be copied exactly and the comment above stops ShellCheck from showing this warning only for this particular line, all other warnings are shown
+	default_bashrc_file="${HOME}/.bashrc" 
+ 	custom_bashrc_file="${system_configuration_textfiles_directory}/.bashrc" # file that conatains bash configuration
+	touch "${default_bashrc_file}"
+	cat "${custom_bashrc_file}" >> "${default_bashrc_file}"
 fi
 
 
