@@ -30,15 +30,15 @@ if [ "${current_pm}" = "apt" ]; then
  	# shellcheck disable=SC2086
 	sudo apt-get -y install ${application_list} # double quotes SHOULD NOT be used around ${application_list} because it should expand to multiple package-names(seperated by spaces) and not just one and the comment above stops ShellCheck from showing this warning only for this particular line, all other warnings are shown
 
-	sudo apt-get -y install firefox # firefox is on the seperate line here because it is pre-installed in most cases and apt-get fails if the package is already installed
-
 
 	## Install applications with platform specific names
 	sudo apt -y install build-essential # install "make" and other GNU developer utilties
-	
+	application_list="${application_list} build-essential" # add the application to the application list so that it is printed out in the final message
+
 	### Install QEMU and Virt manager if GNOME Boxes aren't available (GNOME isn't installed)
 	if [ "${current_de}" != "gnome" ]; then
 		sudo apt -y install qemu-system virt-manager
+		application_list="${application_list} virt-manager"
 	fi
 
 
@@ -78,15 +78,16 @@ if [ "${current_pm}" = "dnf" ]; then
 	## Install applications
  	# shellcheck disable=SC2086
 	sudo dnf -y install ${application_list} # double quotes SHOULD NOT be used around ${application_list} because it should expand to multiple package-names(seperated by spaces) and not just one and the comment above stops ShellCheck from showing this warning only for this particular line, all other warnings are shown
-	sudo dnf -y install firefox
 
 
 	## Install applications with platform specific names
 	sudo dnf -y install @development-tools # install "make" and other GNU utilites
+	application_list="${application_list} development-tools" # add the application to the application list so that it is printed out in the final message
 
 	### Install QEMU and Virt manager if GNOME Boxes aren't available (GNOME isn't installed)
 	if [ "${current_de}" != "gnome" ]; then
 		sudo dnf -y install @virtualization
+		application_list="${application_list} virt-manager"
 	fi
 
 

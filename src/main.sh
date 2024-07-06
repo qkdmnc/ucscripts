@@ -3,7 +3,7 @@
 
 
 # Variables
-application_list="nano" # firefox - it is not present in this list because it's package name is different on different Linux distributions, so it is installed in the package manager specific section of package_management.sh included in this file
+application_list="nano"
 directory_creation_list="${HOME}/git-repos ${HOME}/.iso_images" # list of directories which will be created by this script
 
 
