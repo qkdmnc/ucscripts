@@ -9,8 +9,16 @@
 # 	tput [attribute] [optional value to which attribute is set]
 
 
+# Variables
+t_bold="\[$(tput bold)\]"
+t_cyan="\[$(tput setaf 6)\]"
+t_blue="\[$(tput setaf 4)\]"
+t_magenta="\[$(tput setaf 5)\]"
+t_reset="\[$(tput sgr0)\]"
+
+
 # PS1 holds the shell prompt
-PS1="\[$(tput bold)\]\[$(tput setaf 6)\][\[$(tput setaf 4)\]\u \[$(tput setaf 5)\]\w\[$(tput setaf 6)\]]\[$(tput sgr0)\] "
+PS1="${t_bold}${t_cyan}[${t_blue}\u ${t_magenta}\w${t_cyan}]${t_reset} "
 
 # PS2 holds the shell prompt for multi-line commands
-PS2="\[$(tput bold)\]\[$(tput setaf 6)\]>\[$(tput sgr0)\] "
+PS2="${t_bold}${t_cyan}>${t_reset}"
