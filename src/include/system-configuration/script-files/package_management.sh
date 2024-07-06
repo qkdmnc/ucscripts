@@ -16,6 +16,24 @@ if [ "${current_pm}" = "apt" ]; then
 	sudo apt -y update && sudo apt -y upgrade
 
 
+	## Install applications
+ 	# shellcheck disable=SC2086
+	sudo apt-get -y install ${application_list} # double quotes SHOULD NOT be used around ${application_list} because it should expand to multiple package-names(seperated by spaces) and not just one and the comment above stops ShellCheck from showing this warning only for this particular line, all other warnings are shown
+
+
+	## Install applications with platform specific names
+	sudo apt -y install build-essential # install "make" and other GNU developer utilties
+
+	### Install QEMU and Virt manager if GNOME Boxes aren't available (GNOME isn't installed)
+	if [ "${current_de}" != "gnome" ]; then
+		sudo apt -y install qemu-system virt-manager
+	fi
+
+
+	## Remove the ssh server to disable the ability of remote access to the computer(to prevent malicious unauthorized access)
+	sudo apt-get --purge -y remove openssh-server
+
+
 	## Install VS code - https://code.visualstudio.com/docs/setup/linux
 	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 	sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
@@ -24,26 +42,6 @@ if [ "${current_pm}" = "apt" ]; then
 	sudo apt install apt-transport-https
  	sudo apt update
 	sudo apt install code
-
-
-	## Install applications (might not install becuase apt requires all of them to be in repos, otherwise it fails)
- 	# shellcheck disable=SC2086
-	sudo apt-get -y install ${application_list} # double quotes SHOULD NOT be used around ${application_list} because it should expand to multiple package-names(seperated by spaces) and not just one and the comment above stops ShellCheck from showing this warning only for this particular line, all other warnings are shown
-
-
-	## Install applications with platform specific names
-	sudo apt -y install build-essential # install "make" and other GNU developer utilties
-	application_list="${application_list} build-essential" # add the application to the application list so that it is printed out in the final message
-
-	### Install QEMU and Virt manager if GNOME Boxes aren't available (GNOME isn't installed)
-	if [ "${current_de}" != "gnome" ]; then
-		sudo apt -y install qemu-system virt-manager
-		application_list="${application_list} virt-manager"
-	fi
-
-
-	## Remove the ssh server to disable the ability of remote access to the computer(to prevent malicious unauthorized access)
-	sudo apt-get --purge -y remove openssh-server
 fi
 
 
@@ -67,31 +65,29 @@ if [ "${current_pm}" = "dnf" ]; then
 	sudo dnf -y update
 
 
-	## Install VS code - https://code.visualstudio.com/docs/setup/linux
- 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-  	# shellcheck disable=SC3037
-	echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
- 	dnf check-update
-	sudo dnf install code
-
-
 	## Install applications
  	# shellcheck disable=SC2086
 	sudo dnf -y install ${application_list} # double quotes SHOULD NOT be used around ${application_list} because it should expand to multiple package-names(seperated by spaces) and not just one and the comment above stops ShellCheck from showing this warning only for this particular line, all other warnings are shown
-
+	
 
 	## Install applications with platform specific names
 	sudo dnf -y install @development-tools # install "make" and other GNU utilites
-	application_list="${application_list} development-tools" # add the application to the application list so that it is printed out in the final message
 
 	### Install QEMU and Virt manager if GNOME Boxes aren't available (GNOME isn't installed)
 	if [ "${current_de}" != "gnome" ]; then
 		sudo dnf -y install @virtualization
-		application_list="${application_list} virt-manager"
 	fi
 
 
 	## Remove the ssh server to disable the ability of remote access to the computer(to prevent malicious unauthorized access)
 	sudo dnf -y remove openssh-server
 	sudo dnf -y autoremove
+
+
+	## Install VS code - https://code.visualstudio.com/docs/setup/linux
+ 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+  	# shellcheck disable=SC3037
+	echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+ 	dnf check-update
+	sudo dnf install code
 fi
