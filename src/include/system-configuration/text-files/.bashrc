@@ -1,3 +1,6 @@
+
+
+# Bash prompt customization 
 # Customizing prompt guide - https://wiki.archlinux.org/title/Bash/Prompt_customization
 # Bash escape sequences - https://www.gnu.org/software/bash/manual/html_node/Controlling-the-Prompt.html
 # 	\u - current username
