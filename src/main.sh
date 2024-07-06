@@ -4,7 +4,7 @@
 
 # Variables
 application_list="nano" # firefox - it is not present in this list because it's package name is different on different Linux distributions, so it is installed in the package manager specific section of package_management.sh included in this file
-directory_creation_list="${HOME}/git-repos" # list of directories which will be created by this script
+directory_creation_list="${HOME}/git-repos ${HOME}/.iso_images" # list of directories which will be created by this script
 
 
 ## Directories in this repository which are used in this script are being put into variables and checked for existance
@@ -29,16 +29,6 @@ application_configuration_textfiles_directory="${application_configuration_direc
 
 ## File which will contain the output of this script after it finishes 
 script_output_file="./output.txt"
-
-
-
-# User questions
-echo "Should virutalization software be installed (yes/no): " # read -p was not used as it is not compatble with read -r which is required and because -p is not POSIX compliant
-read -r virtualization_install # read -r is used so that inputted backslashes are not interpreted as escape sequences, but as normal characters
-
-if [ "${virtualization_install}" = "yes" ]; then
-	directory_creation_list="${directory_creation_list} ${HOME}/vm/iso_images ${HOME}/vm/virtual_disks"
-fi
 
 
 
