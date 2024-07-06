@@ -12,7 +12,7 @@
 	* `main.sh` - the main shell script of this repository which is able to configures different unix systems (e.g. Linux, MacOS)
 	* `include/` - all scripts inside this folder are included into `main.sh` and are therefore run from the directory where `main.sh` is located which means that all of the file and directory paths inside them should be relative to `main.sh`
 		* `application-configuration/` - directory containing scripts and configuration textfiles to configure the installed applications
-		* `application-configuration/` - directory containing scripts and configuration textfiles to configure the system
+		* `system-configuration/` - directory containing scripts and configuration textfiles to configure the system
 
 
 ## Script coding rules
