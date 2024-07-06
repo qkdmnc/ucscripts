@@ -134,9 +134,9 @@ if [ "${current_os}" = "linux" ]; then
 1. Default XDG directories (e.g. Music) were moved to a hidden directory inside the user home directory." >> "${script_output_file}"
 
 	if [ "${current_de}" = "gnome ]; then
-		echo "2. Desktop envrionment of this system was detected to be GNOME, therefore QEMU and virt manager were not installed as GNOME Boxes could be used for virtualization instead."
+		echo "2. Desktop envrionment of this system was detected to be GNOME, therefore QEMU and Virt manager were not installed as GNOME Boxes could be used for virtualization instead."
   	else
-		echo "2. Desktop environment of this system was detected to not be gnome, therefore QEMU and virt manager were installed as GNOME Boxes is not pre-intalled."
+		echo "2. Desktop environment of this system was detected to not be GNOME, therefore QEMU and Virt manager were installed as GNOME Boxes is not pre-intalled."
 	fi
 fi
 
