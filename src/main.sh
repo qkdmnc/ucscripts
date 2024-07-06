@@ -4,7 +4,7 @@
 
 # Variables
 application_list="nano"
-application_list_special="gcc make code" # list of installed applications for applications that have platform-specific package names or are installed from third party repositories
+application_list_special="gcc make code" # This list of applications that have platform-specific package names or are installed from third party repositories SHOULD BE updated anytime such app installation is added to package_managemet.md to be installed by this script.
 directory_creation_list="${HOME}/git-repos ${HOME}/.iso_images" # list of directories which will be created by this script
 
 
