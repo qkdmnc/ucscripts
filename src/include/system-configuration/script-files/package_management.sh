@@ -30,11 +30,8 @@ if [ "${current_pm}" = "apt" ]; then
 	fi
 
 
-	## Remove the ssh server to disable the ability of remote access to the computer(to prevent malicious unauthorized access)
-	sudo apt-get --purge -y remove openssh-server
-
-
-	## Install VS code - https://code.visualstudio.com/docs/setup/linux
+	## Install applications that are absent from distribution's repositories
+	### Install VS code - https://code.visualstudio.com/docs/setup/linux
 	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 	sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
 	echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
@@ -42,6 +39,10 @@ if [ "${current_pm}" = "apt" ]; then
 	sudo apt install apt-transport-https
  	sudo apt update
 	sudo apt install code
+
+
+	## Remove the ssh server to disable the ability of remote access to the computer(to prevent malicious unauthorized access)
+	sudo apt-get --purge -y remove openssh-server
 fi
 
 
@@ -79,15 +80,16 @@ if [ "${current_pm}" = "dnf" ]; then
 	fi
 
 
-	## Remove the ssh server to disable the ability of remote access to the computer(to prevent malicious unauthorized access)
-	sudo dnf -y remove openssh-server
-	sudo dnf -y autoremove
-
-
-	## Install VS code - https://code.visualstudio.com/docs/setup/linux
+	## Install applications that are absent from distribution's repositories
+	### Install VS code - https://code.visualstudio.com/docs/setup/linux
  	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
   	# shellcheck disable=SC3037
 	echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
  	dnf check-update
 	sudo dnf install code
+
+
+ 	## Remove the ssh server to disable the ability of remote access to the computer(to prevent malicious unauthorized access)
+	sudo dnf -y remove openssh-server
+	sudo dnf -y autoremove
 fi
