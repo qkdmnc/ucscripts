@@ -4,6 +4,7 @@
 
 # Variables
 application_list="nano"
+application_list_special="gcc code" # list of installed applications for applications that have platform-specific package names or are installed from third party repositories
 directory_creation_list="${HOME}/git-repos ${HOME}/.iso_images" # list of directories which will be created by this script
 
 
@@ -116,7 +117,7 @@ echo "
 
 
 --- Check if all of these points were done by the script ---
-1. All of the following applications were installed by the package manager: ${application_list} vscode
+1. All of the following applications were installed by the package manager: ${application_list} ${application_list_special}
 	- No terminal emulator application was installed by this script, the desktop environment's pre-installed terminal emulator application should be used(GNOME terminal on GNOME and Konsole on KDE(and other QT desktop environments)).
 	- Some or all applications from the list above might not be installed if APT package manager is used becuase it fails if any package from the list provided to it is missing in it's repositories(for example due to one package in the list having been written incorrectly).
 2. Following directories were created: ${directory_creation_list}
