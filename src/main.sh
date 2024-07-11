@@ -45,7 +45,7 @@ esac
 
 ### Get the name of the Desktop Environment being used
 current_de="none"
-case "${DESKTOP_SESSION}" in
+case "${XDG_SESSION_DESKTOP}" in # This XDG environment variable is standardized accross Linux systems (https://www.freedesktop.org/software/systemd/man/latest/pam_systemd.html) and should be used instead of XDG_CURRENT_DESKTOP which provides a semicolon separated list of installed DEs and DESKTOP_SESSION isn't even a standardized environment variable.
 	gnome*) current_de="gnome" ;;
 	plasma*) current_de="kde" ;;
  	"") current_de="macos" ;;
