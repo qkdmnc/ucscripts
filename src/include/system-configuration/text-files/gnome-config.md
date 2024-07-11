@@ -95,4 +95,4 @@
 
 # Documentation
 1. All of GNOME documentation is accessed through GNOME Help (Package name: gnome-help) application that is pre-installed.
-2. The information in Help is the compiled version of the GNOME documentation [repository](https://gitlab.gnome.org/GNOME/gnome-user-docs/)
+2. The information in Help is the compiled version of the GNOME documentation [repository](https://gitlab.gnome.org/GNOME/gnome-user-docs/).
