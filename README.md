@@ -45,10 +45,10 @@
 * [ShellCheck](https://www.shellcheck.net/) - static shell script checker
 	* ShellCheck [repository](https://github.com/koalaman/shellcheck)
 * In case a ShellCheck warning is CERTAINLY 100% irrelevant, it can be ignored for that one specific instance (not for the entire file with: [ShellCheck Ignoring](https://github.com/koalaman/shellcheck/wiki/Ignore)
-	* Always check if the warning is actually totally irrelevant and if it is, have a comment explanation why the warning is irrelvant in that particualr instance on the same line as code, NOT on the same line as the shell check ignore statement.
-	* ALWAYS REMOVE the ignore statement if the line of code below it was edited or removed.
-	* Always check all of the ignroe statements inside the file after it was changed.
-	* NEVER have the ignore statement on the next line after a "#!" because it will disable all warnings in the [file](https://github.com/koalaman/shellcheck/wiki/Ignore#ignoring-all-instances-in-a-file-044) 
+	* **ALWAYS** check if the warning is actually totally irrelevant and if it is, have a comment explanation why the warning is irrelvant in that particualr instance on the same line as code, NOT on the same line as the shell check ignore statement.
+	* **ALWAYS** REMOVE the ignore statement if the line of code below it was edited or removed.
+	* **ALWAYS** check all of the ShellCheck ignroe statements inside the file after it was changed.
+	* **NEVER** have the ignore statement on the next line after a "#!" because it will disable all warnings in the [file](https://github.com/koalaman/shellcheck/wiki/Ignore#ignoring-all-instances-in-a-file-044) 
 	* The explanations for all ShellCheck suggestions (e.g. SC...) are in ShellCheck [Wiki](https://github.com/koalaman/shellcheck/wiki)
 1. Paste `scripts/main.sh` into ShellCheck
 2. In the places where other scripts are being included into the `main.sh`, paste these scripts into the ShellCheck instance from the point above
