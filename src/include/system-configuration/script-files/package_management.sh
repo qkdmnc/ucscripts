@@ -38,7 +38,7 @@ if [ "${current_pm}" = "apt" ]; then
 	rm -f packages.microsoft.gpg
 	sudo apt install apt-transport-https
  	sudo apt update
-	sudo apt install code
+	sudo apt -y install code
 
 
 	## Remove the ssh server to disable the ability of remote access to the computer(to prevent malicious unauthorized access)
@@ -86,7 +86,7 @@ if [ "${current_pm}" = "dnf" ]; then
   	# shellcheck disable=SC3037
 	echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
  	dnf check-update
-	sudo dnf install code
+	sudo dnf -y install code
 
 
  	## Remove the ssh server to disable the ability of remote access to the computer(to prevent malicious unauthorized access)
