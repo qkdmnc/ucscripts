@@ -135,9 +135,9 @@ if [ "${current_os}" = "linux" ]; then
 1. Default XDG directories (e.g. Music) were moved to a hidden directory inside the user home directory." >> "${script_output_file}"
 
 	if [ "${current_de}" = "gnome" ]; then
-		echo "2. Desktop envrionment of this system was detected to be GNOME, therefore QEMU and Virt manager were not installed as GNOME Boxes could be used for virtualization instead."
+		echo "2. Desktop envrionment of this system was detected to be GNOME, therefore QEMU and Virt manager were not installed as GNOME Boxes could be used for virtualization instead." >> "${script_output_file}"
   	else
-		echo "2. Desktop environment of this system was detected to not be GNOME, therefore QEMU and Virt manager were installed as GNOME Boxes is not pre-intalled."
+		echo "2. Desktop environment of this system was detected to not be GNOME, therefore QEMU and Virt manager were installed as GNOME Boxes is not pre-intalled." >> "${script_output_file}"
 	fi
 fi
 
@@ -148,7 +148,7 @@ echo "
 	* ONLY remove unneeded GUI applications, NEVER terminal applications or services as their removal could brake the system.
 	* ONLY remove these unneeded GUI applications using a GUI package manager (e.g. GNOME Software), not a command line package manager.
 	* In most cases, do not remove pre-installed applications.
-2. Change browser settings according to configuration MarkDown file
+2. Change browser settings according to configuration MarkDown file.
 * If the computer contains an NVIDIA GPU, install NVIDIA proprietary drivers for it.
 
 
