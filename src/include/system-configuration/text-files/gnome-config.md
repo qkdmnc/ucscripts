@@ -13,7 +13,7 @@
 	* *(On Desktop)*
  		* Delay (1 hour) 
   	* *(On Laptop)*
- 		* On Battery (10 minutes) 
+ 		* On Battery (15 minutes) 
 		* Plugged In (30 minutes)
 * *(On laptop)* Show Battery Percentage (ON)
 
@@ -28,10 +28,11 @@
 
 
 ## Apps
-* Default Apps (SET)
-* Removable Media
-	* Automatically Launch Apps (OFF) 
-	* EVERYTHING (Do nothing)  
+* Default Apps
+	* Default Apps (SET) 
+	* Removable Media
+		* Automatically Launch Apps (OFF) 
+		* EVERYTHING (Do nothing)  
 
 
 ## Notifications
@@ -46,15 +47,16 @@
 * EVERYTHING (OFF)
 
 
-## Keyboard -> View and Customize Shortcuts
-* Navigation
-	* Switch to workspace [number] (Super + alt + [number])
-	* Hide all normal windows`(Super + D)`
-	* Move to workspace left/right (Super + alt + <-/->)
-* Custom Shortcuts
-	* nautilus (Super + E)
-	* gnome-terminal (ctrl + alt + T)
-	* gnome-system-monitor (ctrl + shift + esc)  
+## Keyboard
+* View and Customize Shortcuts
+	* Navigation
+		* Switch to workspace [number] (Super + alt + [number])
+		* Hide all normal windows`(Super + D)`
+		* Move to workspace left/right (Super + alt + <-/->)
+	* Custom Shortcuts
+		* nautilus (Super + E)
+		* gnome-terminal (ctrl + alt + T)
+		* gnome-system-monitor (ctrl + shift + esc)  
 
 
 ## Accessibility
