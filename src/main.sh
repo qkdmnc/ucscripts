@@ -132,7 +132,7 @@ fi
 if [ "${current_os}" = "linux" ]; then
 	echo "
 -- Points to check that are specific to the installed Operating System, ${current_os} --
-1. Default XDG directories (e.g. Music) were moved to a hidden directory inside the user home directory." >> "${script_output_file}"
+1. Default XDG directories (e.g. Music) were moved to a hidden directory: ${hidden_xdg_user_directories_path}" >> "${script_output_file}"
 
 	if [ "${current_de}" = "gnome" ]; then
 		echo "2. Desktop envrionment of this system was detected to be GNOME, therefore QEMU and Virt manager were not installed as GNOME Boxes could be used for virtualization instead." >> "${script_output_file}"
