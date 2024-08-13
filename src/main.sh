@@ -101,7 +101,7 @@ clear # clear all of the output of the code above, to not clutter the terminal
 echo "
 --- Important Information ---
 1. This script has finished, reboot the computer to make sure everything works fine
-2. After rebooting the computer, go to this directory (src) and follow the instructions displayed after running: cat ${script_output_file}"
+2. After rebooting the computer, go to this directory $(pwd) and follow the instructions displayed after running: cat ${script_output_file}"
 
 
 ## GUI Configurations
