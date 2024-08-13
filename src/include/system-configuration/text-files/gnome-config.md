@@ -51,7 +51,7 @@
 * View and Customize Shortcuts
 	* Navigation
 		* Switch to workspace [number] (Super + alt + [number])
-		* Hide all normal windows`(Super + D)`
+		* Hide all normal windows (Super + D)
 		* Move to workspace left/right (Super + alt + <-/->)
 	* Custom Shortcuts
 		* nautilus (Super + E)
