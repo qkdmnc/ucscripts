@@ -99,14 +99,14 @@ mkdir -p ${directory_creation_list} # Double quotes SHOULD NOT be used around $d
 ## Information outputted to the terminal for the user
 clear # clear all of the output of the code above, to not clutter the terminal
 echo "
---- Important Information ---
-1. This script has finished, reboot the computer to make sure everything works fine
-2. After rebooting the computer, go to this directory $(pwd) and follow the instructions displayed after running: cat ${script_output_file}"
+--- Important End of Script Information ---
+1. This script has finished, reboot the computer to make sure everything works fine.
+2. After rebooting the computer go to: $(pwd); follow the instructions displayed by running: cat ${script_output_file}"
 
 
 ## GUI Configurations
 if [ "${current_de}" != "none" ]; then
-	echo "--- GUI Configuration ---" >> "${script_output_file}"
+	echo "--- Configuration Using GUI ---" >> "${script_output_file}"
 	cat "${system_configuration_textfiles_directory}/${current_de}-config.md" >> "${script_output_file}"
 fi
 
@@ -116,7 +116,7 @@ fi
 echo "
 
 
---- Check if all of these points were done by the script ---
+--- Check if All of These Points Were Done by the Script ---
 1. All of the following applications were installed by the package manager: ${application_list} ${application_list_special}
 	- No terminal emulator application was installed by this script, the desktop environment's pre-installed terminal emulator application should be used(GNOME terminal on GNOME and Konsole on KDE(and other QT desktop environments)).
 	- Some or all applications from the list above might not be installed if APT package manager is used becuase it fails if any package from the list provided to it is missing in it's repositories(for example due to one package in the list having been written incorrectly).
@@ -152,4 +152,4 @@ echo "
 * If the computer contains an NVIDIA GPU, install NVIDIA proprietary drivers for it.
 
 
-Reboot the computer to make sure all of the settings have been applied." >> "${script_output_file}"
+Reboot the computer to make sure all of the changes have been applied." >> "${script_output_file}"
