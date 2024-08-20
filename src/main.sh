@@ -86,6 +86,7 @@ fi
 
 # Cross-platform Configuration
 ## Create directories
+### -p option disables error if the directory already exists
 # shellcheck disable=SC2086
 mkdir -p ${directory_creation_list} # Double quotes SHOULD NOT be used around $dirs_list because it should expand to multiple directories (seperated by spaces) and not just one and the comment above stops ShellCheck from showing this warning only for this particular line, all other warnings are shown
 
