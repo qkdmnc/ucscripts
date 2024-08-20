@@ -5,7 +5,8 @@
 # Variables
 application_list="nano"
 application_list_special="gcc make code" # !!!!! This list of applications that have platform-specific package names or are installed from third party repositories SHOULD BE updated anytime such app installation is added to package_managemet.md to be installed by this script. !!!!!
-directory_creation_list="${HOME}/Projects ${HOME}/.iso_images" # list of directories which will be created by this script
+miscellaneous_home_directory="${HOME}/Miscellaneous" ## Directory which will be created to contain various data
+directory_creation_list="${HOME}/Projects ${HOME}/${miscellaneous_home_directory} ${HOME}/${miscellaneous_home_directory}/ISO" # list of directories which will be created by this script
 
 
 ## Directories in this repository which are used in this script are being put into variables and checked for existance
@@ -132,7 +133,7 @@ fi
 if [ "${current_os}" = "linux" ]; then
 	echo "
 -- Points to check that are specific to the installed Operating System, ${current_os} --
-1. Default XDG directories (e.g. Music) were moved to a hidden directory: ${hidden_xdg_user_directories_path}" >> "${script_output_file}"
+1. Default XDG directories (e.g. Music) were moved to a hidden directory: ${moved_xdg_user_directories_path}" >> "${script_output_file}"
 
 	if [ "${current_de}" = "gnome" ]; then
 		echo "2. Desktop envrionment of this system was detected to be GNOME, therefore QEMU and Virt manager were not installed as GNOME Boxes could be used for virtualization instead." >> "${script_output_file}"
