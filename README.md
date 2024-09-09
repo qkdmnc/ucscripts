@@ -1,4 +1,4 @@
-# Scripts (!! Check with Shellcheck after !!)
+# Scripts (!! Check with Shellcheck !!)
 ## Using this repository
 1. Clone this repository into any folder(usually the Downloads folder in user's home folder) with `git clone https://github.com/qkdmnc/ucscripts/`
 2. Run `cd src`
